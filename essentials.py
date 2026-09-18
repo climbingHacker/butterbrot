@@ -8,7 +8,7 @@ MUSIC_DIR = BASE_DIR.joinpath("music")
 def load_sprite(name):
     print("Loading sprite: " + name)
     path = ASSETS_DIR.glob("**/" + name + "*")
-    return pygame.image.load(list(path)[0])
+    return pygame.image.load(list(path)[0]).convert_alpha()
 
 def load_music(name):
     path = MUSIC_DIR.glob("**/" + name + "*")

@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 from player import Player
 faces = dict()
 for path in os.listdir(str(es.BASE_DIR / "images")):
-    faces[path.removesuffix(".png")] = pygame.image.load( str(es.BASE_DIR / "images" / path))
+    faces[path.removesuffix(".png")] = pygame.image.load( str(es.BASE_DIR / "images" / path)).convert_alpha()
 player = Player(screen, pygame.Vector2(0, 0),"Normal", faces)
 
 map.init()
